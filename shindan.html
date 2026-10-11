@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>家賃上限診断|給料・勤務先・条件の3問で、大阪の家賃上限と候補駅がわかる|わとら</title>
+<meta name="description" content="手取り(または総支給)・勤務先・譲れない条件の3問で、大阪で探せる家賃の上限と候補の駅、初期費用の目安を出します。結果をLINEに貼れば、部屋探しメモを返します。">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="favicon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/tiger-icon.png" alt=""><span>わとら<small>大阪の賃貸アドバイザー</small></span></a>
+    <nav class="nav" aria-label="メニュー">
+      <a href="shindan.html">診断</a>
+      <a href="index.html#articles">記事</a>
+      <a href="profile.html">プロフ</a>
+      <a class="nav-line line-link" href="https://line.me/R/ti/p/%40819vbkzr">LINE</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="sec">
+  <div class="wrap">
+    <h1>家賃上限診断</h1>
+    <p class="lead">給料・勤務先・譲れない条件の3問で、大阪で探せる家賃の上限と候補の駅が出ます。</p>
+    <div class="bubble">
+      <img src="img/tiger-icon.png" alt="">
+      <p>給料は「総支給」でも大丈夫。手取りに直して計算します。</p>
+    </div>
+
+    <div class="quiz" id="quiz">
+      <div class="progress" aria-hidden="true"><span></span><span></span><span></span></div>
+
+      <div class="q" data-step="1">
+        <h2 class="q-title">Q1. 月の給料は?</h2>
+        <div class="toggle" id="mode">
+          <button type="button" class="is-on" data-mode="gross">総支給(額面)</button>
+          <button type="button" data-mode="net">手取り</button>
+        </div>
+        <div class="pay-row">
+          <label for="pay">月</label>
+          <select id="pay" aria-label="月の給料"></select>
+        </div>
+        <p class="pay-hint" id="pay-hint"></p>
+        <div class="quiz-nav">
+          <span></span>
+          <button type="button" class="btn btn-orange" id="next1">次へ</button>
+        </div>
+      </div>
+
+      <div class="q hidden" data-step="2">
+        <h2 class="q-title">Q2. 勤務先に近い駅は?</h2>
+        <div class="choices" id="hub">
+          <button type="button" class="choice" data-value="umeda">梅田<small>大阪駅・北新地・中之島あたり</small></button>
+          <button type="button" class="choice" data-value="namba">なんば・本町<small>心斎橋・淀屋橋・堺筋本町あたり</small></button>
+          <button type="button" class="choice" data-value="shinosaka">新大阪・江坂<small>西中島・東三国あたり</small></button>
+          <button type="button" class="choice" data-value="tennoji">天王寺・あべの<small>阿倍野・寺田町あたり</small></button>
+        </div>
+        <div class="quiz-nav">
+          <button type="button" class="btn btn-ghost" id="back2">戻る</button>
+          <button type="button" class="btn btn-orange" id="next2" disabled>次へ</button>
+        </div>
+      </div>
+
+      <div class="q hidden" data-step="3">
+        <h2 class="q-title">Q3. ひとつだけ譲れない条件は?</h2>
+        <div class="choices" id="cond">
+          <button type="button" class="choice" data-value="eki">駅から近い</button>
+          <button type="button" class="choice" data-value="chiku">築浅・きれい</button>
+          <button type="button" class="choice" data-value="hiro">広さ・収納</button>
+          <button type="button" class="choice" data-value="auto">オートロック</button>
+          <button type="button" class="choice" data-value="none">とくに無い</button>
+        </div>
+        <div class="quiz-nav">
+          <button type="button" class="btn btn-ghost" id="back3">戻る</button>
+          <button type="button" class="btn btn-orange" id="next3" disabled>結果を見る</button>
+        </div>
+      </div>
+
+      <div class="q hidden" data-step="4">
+        <div class="result">
+          <div class="result-main">
+            <p class="note" id="r-tedori"></p>
+            <p style="margin:0;font-weight:700">家賃の目安</p>
+            <p class="big"><span id="r-meyasu"></span><small>万円</small></p>
+            <p style="margin:0">現実的な上限は <b id="r-limit"></b>。ここからの背伸びは <b id="r-stretch"></b> まで。</p>
+            <p class="note" style="margin-top:8px">目安は手取りの3割、3.5割までは現実的、そこから先は5,000円までが背伸びの線です。</p>
+          </div>
+
+          <div class="result-grid">
+            <div class="result-box">
+              <h3><span id="r-hub"></span>勤務で、この家賃で探せる駅</h3>
+              <ul id="r-stations"></ul>
+              <p class="note hidden" id="r-stretch-note" style="margin-top:8px">この家賃だと候補が少ないので、背伸びの線まで広げるか、1〜2駅先も見てみましょう。</p>
+              <p class="note" id="r-updated" style="margin-top:8px"></p>
+            </div>
+            <div class="result-box">
+              <h3>最初にまとめて用意するお金</h3>
+              <p style="margin:0;font-size:24px;font-weight:800" id="r-init"></p>
+              <p class="note" style="margin:4px 0 0">初期費用の目安です。キャンペーン物件なら家賃×4か月分、礼金ありなら×5か月分が多い数字です。</p>
+            </div>
+          </div>
+
+          <div class="result-box" style="margin-top:12px">
+            <h3>「<span id="r-cond-label"></span>」を譲らないなら</h3>
+            <p style="margin:0;font-size:15px" id="r-cond-tip"></p>
+          </div>
+
+          <div class="cta-box">
+            <h2>この結果を貼って送ると、部屋探しメモを返します</h2>
+            <p style="font-size:15px">下の文章をコピーして、LINEに貼り付けてください。あなたの予算で、どの駅をどう探すかを書いて返します。</p>
+            <textarea class="result-text" id="r-text" readonly></textarea>
+            <p class="copy-ok" id="copy-ok"></p>
+            <div class="actions">
+              <button type="button" class="btn btn-ghost" id="copy">結果をコピーする</button>
+              <a class="btn btn-line line-link" href="https://line.me/R/ti/p/%40819vbkzr">LINEを開いて貼り付ける</a>
+            </div>
+          </div>
+
+          <div class="quiz-nav">
+            <button type="button" class="btn btn-ghost" id="redo">もう一度</button>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="note" style="margin-top:20px">
+      <p>家賃の相場はSUUMOの沿線ページ(1K/1DK)をもとにしています。実際の部屋は物件ごとに違うので、候補駅は「ここから探し始める」目安として使ってください。</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-links">
+      <a href="index.html">トップ</a>
+      <a href="profile.html">わとらについて</a>
+      <a class="line-link" href="https://line.me/R/ti/p/%40819vbkzr">LINE</a>
+    </div>
+    <p>このサイトは、ニックネーム「わとら」で運営する個人の相談窓口です。いまは物件の紹介・案内・契約の仲介は行っていません。相談は無料です。</p>
+    <p>© わとら</p>
+  </div>
+</footer>
+
+<script src="data/stations.js"></script>
+<script src="js/shindan.js"></script>
+</body>
+</html>
