@@ -12,6 +12,35 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
+<style>
+.article p{margin:0 0 1em}
+.say{border:3px solid var(--ink);border-radius:var(--r-md);background:var(--orange-soft);padding:12px 14px;margin:0 0 1em;font-weight:700}
+.say small{display:block;font-weight:700;color:var(--ink-soft);font-size:13px;margin-bottom:2px}
+.cols{display:grid;gap:12px;margin:0 0 1em}
+@media (min-width:600px){.cols{grid-template-columns:1fr 1fr}}
+.col{border:3px solid var(--ink);border-radius:var(--r-md);background:var(--paper);padding:14px 16px;margin:0 0 1em}
+.cols .col{margin:0}
+.article h2 .dot{margin-right:8px}
+.col h3{margin:0 0 6px;font-size:16px;display:flex;align-items:center;gap:8px}
+.col ul{list-style:none;margin:0;padding:0}
+.col li{margin:0;padding:8px 0;border-top:2px dashed #E4DED8}
+.col li:first-child{border-top:0}
+.col li strong{display:block}
+.col li span{display:block;font-size:14px;color:var(--ink-soft)}
+.dot{width:16px;height:16px;border-radius:50%;border:2px solid var(--ink);flex:none;display:inline-block;vertical-align:-2px}
+.dot-must{background:var(--ink)}
+.dot-ask{background:var(--orange)}
+.dot-maybe{background:var(--sky)}
+.legend{list-style:none;margin:0 0 1em;padding:0;display:grid;gap:8px}
+.legend li{margin:0;display:flex;gap:10px;align-items:flex-start}
+.legend .dot{margin-top:6px}
+.rows{list-style:none;margin:0 0 1em;padding:0;border:3px solid var(--ink);border-radius:var(--r-md);background:var(--paper);overflow:hidden}
+.rows li{margin:0;display:flex;justify-content:space-between;gap:12px;padding:9px 14px;border-top:2px dashed #E4DED8}
+.rows li:first-child{border-top:0}
+.rows li b{flex:none;text-align:right}
+.rows li.sum{border-top:3px solid var(--ink);font-weight:800;background:var(--sky-soft)}
+.checks{margin:0 0 1em;padding-left:1.3em}
+</style>
 </head>
 <body>
 
@@ -37,13 +66,74 @@
 
 <article class="article">
 <div class="toc"><strong>目次</strong><ol><li><a href="#s1">結論</a></li><li><a href="#s2">相見積もりで変わる項目、変わらない項目</a></li><li><a href="#s3">やり方は3ステップ</a></li><li><a href="#s4">マナー</a></li><li><a href="#s5">バレる?</a></li><li><a href="#s6">内見後の相見積もりはアリ?</a></li><li><a href="#faq">よくある質問</a></li></ol></div>
-<h2 id="s1">結論: 相見積もりは取っていい。むしろ取ったほうがいい</h2><p>同じ部屋なら、家賃・敷金・礼金は不動産屋が変わっても同じです。変わるのは仲介手数料と、店ごとに付けるオプション。だから比べる価値があります。</p><p>「失礼かも」と思って1社で決める人がいちばん損をします。</p><h2 id="s2">相見積もりで変わる項目、変わらない項目</h2><p>変わらない: 家賃・敷金・礼金・前家賃・日割り(大家さんと管理会社が決めるもの)。</p><p>変わる: 仲介手数料・消臭/除菌費・安心サポート・書類作成費など(店が決めるもの)。</p><p class="todo">【執筆予定】変わる/変わらないを一覧の表にする。店ごとの差が出やすい項目に印をつける。</p><h2 id="s3">やり方は3ステップ</h2><p>1. 物件名と条件(入居日・契約年数)を同じにそろえる。</p><p>2. 2社目には「他でも見積もりを取っています」と正直に言っていい。</p><p>3. 比べるのは総額ではなく、項目ごと。</p><p class="todo">【執筆予定】頼み方の文例を2つ(店頭で言う版・LINEやメールで送る版)。</p><h2 id="s4">マナー: 内見した店への義理は、どこまで必要か</h2><p>内見まで付き合ってくれた店で決めるのが礼儀、と思いがちですが、お金を払うのはあなたです。ただし、何社も内見だけ回るのは時間の無駄になります。</p><p class="todo">【執筆予定】「内見は1社、見積もりは2社」の現実的な線を提案。断るときの言い方を1行で。</p><h2 id="s5">バレる?: 唯一のルールは「申込は1社だけ」</h2><p>同じ部屋の申込は、どの店から出しても同じ管理会社に届きます。2社から同じ人の申込が届くと、管理会社が困り、審査に響くこともあります。</p><p>見積もりを2社で取ることは問題ありません。申込を出すのは、決めた1社だけ。</p><p class="todo">【執筆予定】「バレる」の正体(管理会社に同じ名前の申込が重なる)を図で説明。</p><h2 id="s6">内見後の相見積もりはアリ?</h2><p>アリです。内見して気に入った部屋の見積もりを、別の店で取ってもいい。ただし申込を急かされている場合は、先に初期費用の内訳だけ確認しましょう。</p><p class="todo">【執筆予定】急かされたときの「一晩待ってください」の言い方。</p>
 
+<h2 id="s1">結論: 相見積もりは取っていい。むしろ取ったほうがいい</h2>
+<p>賃貸の部屋は、多くの場合、どの不動産屋からでも同じ部屋を申し込めます。募集の情報が不動産屋どうしで共有されているからです。だから「同じ部屋の見積もりを、別の店でも取って比べる」ことができます。</p>
+<p>同じ部屋なら、家賃・敷金・礼金は店が変わっても同じです。違いが出るのは、仲介手数料と、店が付ける項目。家賃7万円の部屋なら、仲介手数料だけで3万8,500円の差が出ることがあります。</p>
+<p>「失礼かも」と1社だけで決めると、その差に気づく機会がなくなります。比べたうえで選ぶのは、ふつうの買い物と同じです。</p>
+
+<h2 id="s2">相見積もりで変わる項目、変わらない項目</h2>
+<div class="cols">
+<div class="col">
+<h3>変わらない(物件で決まる)</h3>
+<ul>
+<li><strong>家賃・共益費</strong></li>
+<li><strong>敷金・礼金</strong></li>
+<li><strong>前家賃・日割り家賃</strong><span>入居日が同じなら同じ金額</span></li>
+<li><strong>保証会社の利用料</strong><span>物件ごとに会社が指定されている</span></li>
+</ul>
+</div>
+<div class="col">
+<h3>変わる(店で決まる)</h3>
+<ul>
+<li><strong>仲介手数料</strong><span>家賃の0.5か月分〜1か月分(+消費税)</span></li>
+<li><strong>消臭・除菌、害虫駆除</strong><span>店が付けている場合</span></li>
+<li><strong>サポートサービス</strong><span>店が窓口になっている場合</span></li>
+<li><strong>火災保険</strong><span>店がすすめる保険の場合</span></li>
+</ul>
+</div>
+</div>
+<p>同じ名前の項目でも、物件側(管理会社)が必須にしている場合と、店が付けている場合があります。見分け方はかんたんで、2社の見積もりの両方に載っていれば物件側、片方にしか載っていなければ店側のことが多いです。</p>
+<p>仲介手数料には、法律で決まった上限があります。借りる人が払うのは家賃の1か月分+消費税まで。実際は1か月分の店が多く、0.5か月分や無料の店もあります。金額の説明を受けて、納得してから申込に進みましょう。</p>
+
+<h2 id="s3">やり方は3ステップ</h2>
+<ol class="steps">
+<li><div><strong>条件をそろえる</strong><p>物件名・部屋番号・入居日を同じにします。入居日が違うと日割り家賃と前家賃が変わり、比べられなくなります。</p></div></li>
+<li><div><strong>2社目には正直に頼む</strong><p>「他でも見積もりをもらっています」と言って大丈夫です。隠す必要はありません。</p></div></li>
+<li><div><strong>項目ごとに比べる</strong><p>合計だけを見ると、片方に別の項目が足されていても気づけません。1行ずつ横に並べて、片方にしかない項目に印を付けます。</p></div></li>
+</ol>
+<p>頼むときの言い方は、これで十分です。</p>
+<p class="say"><small>店頭で</small>「この部屋の初期費用の見積もりをお願いします。ほかの会社でも見積もりをもらっています」</p>
+<p class="say"><small>LINEやメールで</small>「○○(物件名)の○号室について、○月○日入居の場合の初期費用の見積もりをいただけますか。項目ごとの金額が分かる形でお願いします」</p>
+
+<h2 id="s4">マナー: 内見した店への義理は、どこまで必要か</h2>
+<p>内見に時間を使ってくれた店で決めたい、という気持ちは自然です。現実的な線は「内見は1社、見積もりは2社」。内見を何社も回るとお互いの時間を使いますが、見積もりは数分で出せます。</p>
+<p>2社目のほうが安かったら、まず内見した店に「この項目は外せますか」と聞いてみてください。合わせてもらえることもあります。それでも差が残るなら、安いほうで申し込んで構いません。</p>
+<p>断るときは一言で大丈夫です。理由を細かく説明する必要はありません。</p>
+<p class="say"><small>断るとき</small>「今回は他社で申し込むことにしました。ご案内ありがとうございました」</p>
+<p>いちばんのマナーは、決めたら早めに伝えることです。店はその部屋を押さえようと動いていることがあります。</p>
+
+<h2 id="s5">バレる?: 唯一のルールは「申込は1社だけ」</h2>
+<p>見積もりを2社で取ったことが、もう一方の店に伝わる仕組みはありません。伝わったとしても、困ることは起きません。見積もりは申込でも契約でもないからです。</p>
+<p>気をつけるのは申込です。申込書は、どの店から出しても同じ管理会社(大家さん側の窓口)に届きます。同じ人の申込が2社から届くと、どちらで進めるのかの確認が入り、手続きが止まります。</p>
+<ul class="rows">
+<li><span>見積もりを取る</span><b>2社でOK</b></li>
+<li><span>内見する</span><b>1社でOK</b></li>
+<li class="sum"><span>申込書を出す</span><b>決めた1社だけ</b></li>
+</ul>
+
+<h2 id="s6">内見後の相見積もりはアリ?</h2>
+<p>アリです。内見で気に入ってから、同じ部屋の見積もりを別の店で取っても問題ありません。</p>
+<p>ただ、部屋の申込は先着順が基本です。迷っている間に、ほかの人の申込が入ることはあります。急ぎたいときは、こう伝えてください。</p>
+<p class="say"><small>返事を待ってもらうとき</small>「今日中にお返事します。初期費用の内訳だけ、先にいただけますか」</p>
+<p>迷う時間を短くするいちばんの方法は、内見の前に見積もりをもらっておくことです。頼み方は<a href="mitsumorisho.html">見積書の受け取り方</a>にまとめました。</p>
 <section class="faq" id="faq">
 <h2>よくある質問</h2>
-<details><summary>何社まで取っていい?</summary><p>2社で十分です。3社以上は時間がかかるわりに、差が出るのは同じ項目なので。</p></details><details><summary>断るときは何と言えばいい?</summary><p>「他社で決めました。ありがとうございました」で十分です。理由を細かく説明する必要はありません。</p></details><details><summary>仲介手数料半額の店は大丈夫?</summary><p>大丈夫な店も多いですが、代わりに別の項目が付いていないかを見てください。総額で比べるのが安全です。</p></details>
+<details><summary>何社まで取っていい?</summary><p>2社で十分です。差が出る項目は決まっているので、3社目で新しく分かることは多くありません。</p></details>
+<details><summary>見積もりを取るのにお金はかかる?</summary><p>かかりません。見積もりは申込でも契約でもないので、断っても費用は発生しません。</p></details>
+<details><summary>断るときは何と言えばいい?</summary><p>「今回は他社で申し込むことにしました。ご案内ありがとうございました」で十分です。理由を細かく説明する必要はありません。</p></details>
+<details><summary>仲介手数料が半額や無料の店は大丈夫?</summary><p>大丈夫な店も多いです。仲介手数料が安い代わりに別の項目が付いていないかを、項目ごとに比べてください。</p></details>
 </section>
-
 <div class="cta-box">
 <h2>2社の見積もり、両方送ってください</h2>
 <p style="font-size:15px">どの項目が店の差で、どの項目が物件の差かを分けて返します。物件名と店名は消してもらって構いません。</p>
