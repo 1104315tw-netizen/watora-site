@@ -12,6 +12,35 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
+<style>
+.article p{margin:0 0 1em}
+.say{border:3px solid var(--ink);border-radius:var(--r-md);background:var(--orange-soft);padding:12px 14px;margin:0 0 1em;font-weight:700}
+.say small{display:block;font-weight:700;color:var(--ink-soft);font-size:13px;margin-bottom:2px}
+.cols{display:grid;gap:12px;margin:0 0 1em}
+@media (min-width:600px){.cols{grid-template-columns:1fr 1fr}}
+.col{border:3px solid var(--ink);border-radius:var(--r-md);background:var(--paper);padding:14px 16px;margin:0 0 1em}
+.cols .col{margin:0}
+.article h2 .dot{margin-right:8px}
+.col h3{margin:0 0 6px;font-size:16px;display:flex;align-items:center;gap:8px}
+.col ul{list-style:none;margin:0;padding:0}
+.col li{margin:0;padding:8px 0;border-top:2px dashed #E4DED8}
+.col li:first-child{border-top:0}
+.col li strong{display:block}
+.col li span{display:block;font-size:14px;color:var(--ink-soft)}
+.dot{width:16px;height:16px;border-radius:50%;border:2px solid var(--ink);flex:none;display:inline-block;vertical-align:-2px}
+.dot-must{background:var(--ink)}
+.dot-ask{background:var(--orange)}
+.dot-maybe{background:var(--sky)}
+.legend{list-style:none;margin:0 0 1em;padding:0;display:grid;gap:8px}
+.legend li{margin:0;display:flex;gap:10px;align-items:flex-start}
+.legend .dot{margin-top:6px}
+.rows{list-style:none;margin:0 0 1em;padding:0;border:3px solid var(--ink);border-radius:var(--r-md);background:var(--paper);overflow:hidden}
+.rows li{margin:0;display:flex;justify-content:space-between;gap:12px;padding:9px 14px;border-top:2px dashed #E4DED8}
+.rows li:first-child{border-top:0}
+.rows li b{flex:none;text-align:right}
+.rows li.sum{border-top:3px solid var(--ink);font-weight:800;background:var(--sky-soft)}
+.checks{margin:0 0 1em;padding-left:1.3em}
+</style>
 </head>
 <body>
 
@@ -37,13 +66,86 @@
 
 <article class="article">
 <div class="toc"><strong>目次</strong><ol><li><a href="#s1">結論</a></li><li><a href="#s2">必ずかかるもの</a></li><li><a href="#s3">聞いていいもの</a></li><li><a href="#s4">外せる場合があるもの</a></li><li><a href="#s5">家賃の何か月分かで見る</a></li><li><a href="#s6">見積もりを送るときのコツ</a></li><li><a href="#faq">よくある質問</a></li></ol></div>
-<h2 id="s1">結論: 項目は3色に分かれる</h2><p>初期費用の見積もりは「必ずかかるもの」「聞いていいもの」「外せる場合があるもの」の3つに分けて読むと、迷いません。</p><h2 id="s2">必ずかかるもの</h2><p>敷金・礼金・前家賃・日割り家賃・仲介手数料・保証会社の利用料・火災保険。これは物件側の条件で、店を変えてもほぼ同じです。</p><p class="todo">【執筆予定】各項目の相場感(家賃の何か月分か)を一覧に。仲介手数料は法律で上限があることを注記。</p><h2 id="s3">聞いていいもの</h2><p>消臭・除菌費、安心サポート、鍵交換費、書類作成費。「これは必須ですか?」と聞いていい項目です。管理会社が必須にしている場合も多いので、答えを聞いてから判断。</p><p class="todo">【執筆予定】大阪で「必須加入」になりやすい項目と、その背景をやさしく説明。</p><h2 id="s4">外せる場合があるもの</h2><p>キャンペーン物件の礼金、フリーレント、契約時期による日割り。交渉というより「条件に合う物件を選ぶ」のが現実的です。</p><p class="todo">【執筆予定】交渉で下がる期待をしすぎない書き方。前向きに「探し方で下げる」へ着地。</p><h2 id="s5">家賃の何か月分かで見る</h2><p>大阪なら、キャンペーン物件で家賃×4か月、礼金ありで×5か月、礼金2か月や法人契約なら×6か月前後が目安です。</p><p class="todo">【執筆予定】3ケースの内訳表。家賃7万円での具体額。</p><h2 id="s6">見積もりを送るときのコツ</h2><p>項目と金額が読めれば十分です。物件名・店名・担当者名は消して構いません。</p><p class="todo">【執筆予定】写真の撮り方(明るい場所で、真上から)。</p>
 
+<h2 id="s1">結論: 項目は3色に分かれる</h2>
+<p>初期費用の見積もりは、行を3つの色に分けて読むと迷いません。</p>
+<ul class="legend">
+<li><span class="dot dot-must"></span><span><strong>必ずかかるもの</strong> 物件の条件で決まり、店を変えてもほぼ同じ</span></li>
+<li><span class="dot dot-ask"></span><span><strong>聞いていいもの</strong> 「これは必須ですか」と確認する項目</span></li>
+<li><span class="dot dot-maybe"></span><span><strong>外せる場合があるもの</strong> 物件や入居日の選び方で変わる</span></li>
+</ul>
+
+<h2 id="s2"><span class="dot dot-must"></span>必ずかかるもの</h2>
+<div class="col">
+<ul>
+<li><strong>敷金</strong><span>家賃の0〜1か月分。退去のときに修繕費を引いて戻るお金。関西では「敷引き」「解約引き」と書かれることがあり、その分は戻りません</span></li>
+<li><strong>礼金</strong><span>家賃の0〜2か月分。大家さんへのお礼で、戻りません</span></li>
+<li><strong>前家賃</strong><span>翌月分の家賃と共益費</span></li>
+<li><strong>日割り家賃</strong><span>入居日から月末までの分</span></li>
+<li><strong>仲介手数料</strong><span>家賃の0.5か月分〜1か月分(+消費税)</span></li>
+<li><strong>保証会社の利用料</strong><span>初回は家賃と共益費の合計の50%前後が多い。月ごとや年ごとの費用がかかる会社もあります</span></li>
+<li><strong>火災保険</strong><span>2年で1万5千〜2万円ほどが多い</span></li>
+</ul>
+</div>
+<p>仲介手数料だけは、店によって変わります。法律で上限が決まっていて、借りる人が払うのは家賃の1か月分+消費税まで。0.5か月分や無料の店もあります。金額の説明を受けて、納得してから申込に進みましょう。</p>
+
+<h2 id="s3"><span class="dot dot-ask"></span>聞いていいもの</h2>
+<p>ここに入る項目は「これは必須ですか」と聞いて大丈夫です。聞くこと自体は失礼ではありません。答えが「管理会社の指定で必須」なら払う項目、「任意」なら自分で決める項目です。</p>
+<div class="col">
+<ul>
+<li><strong>鍵交換費</strong><span>1万5千〜3万3千円ほど。国のガイドラインでは、入居者が入れ替わるときの鍵交換は貸主の負担が妥当とされています。ただ、契約で借りる人の負担と決めている物件が多いのが実情です</span></li>
+<li><strong>消臭・除菌、害虫駆除</strong><span>1万〜2万円ほど。管理会社が必須にしている場合と、店が付けている場合があります</span></li>
+<li><strong>24時間サポートなどのサービス</strong><span>2年で1万5千〜2万円ほど、または月額。大阪では必須にしている管理会社が多い項目です</span></li>
+<li><strong>書類作成費・事務手数料</strong><span>どこに払う費用かを聞いてください。仲介会社が受け取れる報酬は、仲介手数料が上限と決まっています</span></li>
+</ul>
+</div>
+
+<h2 id="s4"><span class="dot dot-maybe"></span>外せる場合があるもの</h2>
+<p>「下げてください」と交渉するより、条件に合う物件を選ぶほうが現実的です。</p>
+<div class="col">
+<ul>
+<li><strong>礼金</strong><span>礼金0の物件や、キャンペーン中の物件を選ぶ</span></li>
+<li><strong>最初の家賃(フリーレント)</strong><span>入居から1か月前後の家賃が無料になる物件。短い期間で解約すると違約金がかかることが多いので、契約期間を確認</span></li>
+<li><strong>日割り家賃</strong><span>入居日を後ろにずらすと、その日数分が下がる</span></li>
+<li><strong>仲介手数料</strong><span>店によって0.5か月分〜1か月分。<a href="aimitsumori.html">相見積もり</a>で比べられる</span></li>
+</ul>
+</div>
+<p>不動産屋には「礼金なしで、この家賃までの部屋はありますか」と、条件として伝えるのが近道です。</p>
+
+<h2 id="s5">家賃の何か月分かで見る</h2>
+<p>合計を家賃で割ると、高いか安いかの見当がつきます。大阪の一人暮らしの目安はこうです。</p>
+<ul class="rows">
+<li><span>敷金0・礼金0のキャンペーン物件</span><b>家賃の約4か月分</b></li>
+<li><span>礼金1か月の物件</span><b>約5か月分</b></li>
+<li><span>礼金2か月や、条件の多い物件</span><b>約6か月分</b></li>
+</ul>
+<p>家賃7万円・敷金0・礼金1か月の部屋に、4月15日から入る場合の計算の例です。金額は目安です。</p>
+<ul class="rows">
+<li><span>礼金(1か月分)</span><b>70,000円</b></li>
+<li><span>日割り家賃(4月15日〜30日)</span><b>約37,300円</b></li>
+<li><span>前家賃(5月分)</span><b>70,000円</b></li>
+<li><span>仲介手数料(1か月分+消費税)</span><b>77,000円</b></li>
+<li><span>保証会社(初回50%)</span><b>35,000円</b></li>
+<li><span>火災保険(2年)</span><b>18,000円</b></li>
+<li><span>鍵交換</span><b>22,000円</b></li>
+<li><span>消臭・サポートなど</span><b>35,000円</b></li>
+<li class="sum"><span>合計</span><b>約364,300円</b></li>
+</ul>
+<p>合計は家賃の約5.2か月分。目安どおりです。自分の予算に合う家賃は<a href="../shindan.html">家賃上限診断</a>で出せます。</p>
+
+<h2 id="s6">見積もりを送るときのコツ</h2>
+<p>項目と金額が読めれば十分です。物件名・店名・担当者名は消して構いません。</p>
+<ol class="checks">
+<li>明るい場所で、真上から撮る</li>
+<li>2枚に分かれているときは、両方送る</li>
+<li>家賃と入居予定日を、一言そえる</li>
+</ol>
 <section class="faq" id="faq">
 <h2>よくある質問</h2>
-<details><summary>消臭費は断れる?</summary><p>管理会社が必須にしている場合は外せません。店が独自に付けている場合は聞けば外れることがあります。見積もりのどちらかは、聞けば分かります。</p></details><details><summary>火災保険は自分で選べる?</summary><p>物件によっては指定があります。指定がなければ、同じ補償内容で安いものを選べる場合があります。</p></details><details><summary>鍵交換は必須?</summary><p>前の入居者の鍵を引き継がないための費用で、必須にしている物件が多いです。金額の目安は見積もりで確認を。</p></details>
+<details><summary>消臭費は断れる?</summary><p>管理会社が必須にしている場合は外せません。店が付けている場合は、聞けば外れることがあります。どちらなのかは、聞けば分かります。</p></details>
+<details><summary>火災保険は自分で選べる?</summary><p>物件によっては保険が指定されています。指定がなければ、同じ補償内容の保険を自分で選べる場合があります。まず「指定ですか」と聞いてください。</p></details>
+<details><summary>鍵交換は必須?</summary><p>前の入居者と同じ鍵のままにしないための費用で、必須にしている物件が多いです。必須かどうかと金額を、見積もりの段階で確認してください。</p></details>
 </section>
-
 <div class="cta-box">
 <h2>見積もりの写真を1枚、送ってください</h2>
 <p style="font-size:15px">項目ごとに3色に分けて返します。物件名と店名は消してもらって構いません。</p>
